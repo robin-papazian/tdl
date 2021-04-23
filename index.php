@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
     <link rel="stylesheet" href="Css/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/9ddb75d515.js" crossorigin="anonymous"></script>
 </head>
     
     <body>
@@ -15,7 +16,7 @@
             <nav class="navbar" role="navigation" aria-label="main navigation">
                 <div class="navbar-brand">
                     <a class="navbar-item">
-                        Home
+                        <i class="fas fa-home">Home</i>   
                     </a>
                     <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
                         <span aria-hidden="true"></span>
@@ -51,7 +52,7 @@
         <section style='border: solid black; '>
             <div class="box has-background-white-bis" >
                 <figure class="image is-490x292 columns is-centered" style='border: solid black;'>
-                    <img src="tr.png" style='width: 437px; height: 370px;'>
+                    <img src="Image/tr.png" style='width: 437px; height: 370px;'>
                 </figure>
                 <div class="box" style='border: solid black; '>
                     <button class="button is-medium is-fullwidth block is-primary is-outlined">Medium</button>
@@ -65,4 +66,4 @@
 </html>
 
 
-<script src='script.js'></script>
+<script src='Js/script.js'></script>

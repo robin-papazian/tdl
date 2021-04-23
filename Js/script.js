@@ -10,3 +10,12 @@ $(document).ready(function()
     
     });
 });
+
+// events sur dropdown nav espace de travaill
+$(document).ready(function() 
+{
+    $("#drop1").click(function() 
+    {
+        $("#drop1").toggleClass("is-active");
+    });
+});
