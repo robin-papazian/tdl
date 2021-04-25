@@ -60,7 +60,7 @@
                     </p>
                 </div>
                 <div class="container ">
-                    <button class="button is-medium is-fullwidth block is-primary is-rounded">Connexion</button>
+                    <button class="button is-medium is-fullwidth block is-primary is-rounded" id='r'>Connexion</button>
                     <button class="button is-medium is-fullwidth is-link is-rounded">Inscription</button>
                 </div>
                
@@ -70,5 +70,15 @@
 
 </html>
 
+<script>
+$(document).ready(function() 
+{
+    $("#r").click(function() 
+    {
+        $(".modal").toggleClass("is-active");
+    });
+});
+
+</script>
 
 <script src='Js/script.js'></script>
