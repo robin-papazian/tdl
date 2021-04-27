@@ -21,4 +21,26 @@
 
             return $this->db;
         }
+
+        /**
+         * Execute une requet prepare
+         */
+        public function stickIn($sql, $array=[])
+        {
+            $query = $this->db->prepare($sql);
+            $query->execute($array);
+        }
+
+        /**
+         * Retourne le resulta d'une requete prepare
+         * 
+         */
+        public function stickOut( $sql, array $array=[])
+        {
+            $query = $this->db->prepare($sql);
+            $query->execute($array);
+            $result = $query->fetchAll(PDO::FETCH_ASSOC);
+            return $result;
+        }
     }
+?>

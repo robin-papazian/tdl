@@ -42,11 +42,41 @@ $(document).ready(function()
 
 $(document).ready(function() 
 {
-    $("nom du bouton").click(function() 
+    $("#insert-user").click(function() 
     {
-        $.ajax();
-    });
-});
+        let nom = $("#nom").val();
+        let login = $("#login").val();
+        let email = $("#email").val();
+        let password = $("#password").val();
+
+       
+        
+        $.ajax({
+            url: 'Api/inscription.php',
+            type: 'POST',
+            data: {
+                name: nom,
+                log: login,
+                ema: email,
+                pass: password,
+                
+            },
+            success: function(response) {
+                // if (response) {
+                //     document.location.href = 'Api/inscription.php';
+                // }
+                // else {
+                //     alert('Mot de passe incorrect');
+                // }
+            },
+            error: function(hxr, error, type) {
+                $('body').append(type);
+            },
+            
+        })
+        console.log(data);
+    })
+})
 
 
 

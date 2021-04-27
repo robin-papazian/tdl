@@ -77,13 +77,13 @@
                         <div class="field">
                             <label class="label">Nom</label>
                             <div class="control">
-                                <input class="input" type="text" placeholder="Ex : Michou">
+                                <input id='nom' class="input" type="text" placeholder="Ex : Michou">
                             </div>
                         </div>
                         <div class="field">
                             <label class="label">Login</label>
                             <div class="control has-icons-left">
-                                <input class="input is-danger" type="text" placeholder="Ex : Michou_de_Marseille">
+                                <input id='login' class="input is-danger" type="text" placeholder="Ex : Michou_de_Marseille">
                                 <span class="icon is-small is-left">
                                     <i class="fas fa-user"></i>
                                 </span>
@@ -93,7 +93,7 @@
                         <div class="field">
                             <label class="label">Email</label>
                             <div class="control has-icons-left has-icons-right">
-                                <input class="input is-danger" type="email" placeholder="Ex : michou@laplateforme.io">
+                                <input id='email' class="input is-danger" type="email" placeholder="Ex : michou@laplateforme.io">
                                 <span class="icon is-small is-left">
                                     <i class="fas fa-user"></i>
                                 </span>
@@ -106,7 +106,7 @@
                         <div class="field">
                             <label class="label">Mot de passe</label>
                             <div class="control has-icons-left">
-                                <input class="input " type="password">
+                                <input id='password' class="input " type="password">
                                 <span class="icon is-small is-left">
                                     <i class="fas fa-lock"></i>
                                 </span>
@@ -114,7 +114,7 @@
                         </div>
                     </section>
                     <footer class="modal-card-foot">
-                        <button class="button is-success">Inscription</button>
+                        <button id='insert-user' class="button is-success">Inscription</button>
                     </footer>
                 </div>
             </div>
