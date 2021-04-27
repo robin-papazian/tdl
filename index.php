@@ -12,43 +12,7 @@
 </head>
     
     <body>
-        <header class='navbar'>
-            <nav class="container" role="navigation" aria-label="main navigation">
-                <div class="navbar-brand">
-                    <a class="navbar-item">
-                        <i class="fas fa-home">Home</i>   
-                    </a>
-                    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-                        <span aria-hidden="true"></span>
-                        <span aria-hidden="true"></span>
-                        <span aria-hidden="true"></span>
-                    </a>
-                </div>
-                <div id="navbarBasicExample" class="navbar-menu">
-                    <div class="navbar-end">
-                        <div class="navbar-item has-dropdown is-hoverable">
-                            <a class="navbar-link">
-                                Robin
-                            </a>
-                            <div class="navbar-dropdown" id="menu-drop">
-                                <div class="navbar-item buttons">
-                                    <a class="button is-primary">
-                                      <strong>Profil</strong>
-                                    </a>
-                                </div>
-                                <hr class="navbar-divider">
-                                <div class="navbar-item buttons">
-                                    <a class="button is-primary">
-                                        <strong>Deconnexion</strong>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </nav>
-        </header>
-
+        <?php include('Html/header.php')?>
         <section class="hero is-large is-info" >
             <div class="hero-body is-flex" >
                 <div class="container has-text-centered ">

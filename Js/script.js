@@ -1,8 +1,8 @@
 
-                                  // events on index
+                                   /** events modal **/
                                   
 
-// modal connexion / inscription
+// connexion / inscription
 $(document).ready(function() 
 {
     $("#button-connexion").click(function() 
@@ -19,6 +19,16 @@ $(document).ready(function()
     });
 });
 
+// profil
+$(document).ready(function() 
+{
+    $("#profil").click(function() 
+    {
+        $("#inscription").toggleClass("is-active");
+    });
+});
+
+
 //close Modals
 $(document).ready(function() 
 {
@@ -28,7 +38,22 @@ $(document).ready(function()
     });
 });
 
-                                    /*********************************/
+                                    /*********Traitement connexion/inscription *********/
+
+$(document).ready(function() 
+{
+    $("nom du bouton").click(function() 
+    {
+        $.ajax();
+    });
+});
+
+
+
+
+                                    /***************************/
+
+
 
 // burger header
 $(document).ready(function() 
