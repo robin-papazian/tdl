@@ -1,5 +1,36 @@
 
-// events sur burger header
+                                  // events on index
+                                  
+
+// modal connexion / inscription
+$(document).ready(function() 
+{
+    $("#button-connexion").click(function() 
+    {
+        $("#connexion").toggleClass("is-active");
+    });
+});
+
+$(document).ready(function() 
+{
+    $("#button-inscription").click(function() 
+    {
+        $("#inscription").toggleClass("is-active");
+    });
+});
+
+//close Modals
+$(document).ready(function() 
+{
+    $(".delete").click(function() 
+    {
+        $(".modal").removeClass("is-active");
+    });
+});
+
+                                    /*********************************/
+
+// burger header
 $(document).ready(function() 
 {
     $(".navbar-burger").click(function() 
@@ -11,7 +42,7 @@ $(document).ready(function()
     });
 });
 
-// events sur dropdown nav espace de travaill
+// dropdown nav espace de travaill
 $(document).ready(function() 
 {
     $("#drop1").click(function() 
