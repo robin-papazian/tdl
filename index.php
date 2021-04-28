@@ -39,29 +39,28 @@
                         <button class="delete" aria-label="close"></button>
                     </header>
                     <section class="modal-card-body">
-                        <div class="field">
+                        <div class="field" id="field-connexion-login">
                             <label class="label">Login</label>
                             <div class="control has-icons-left">
-                                <input class="input is-danger" type="text" placeholder="Ex : Michou_de_Marseille">
+                                <input id='user-login' class="input" type="text" placeholder="Ex : Michou_de_Marseille">
                                 <span class="icon is-small is-left">
                                     <i class="fas fa-user"></i>
                                 </span>
                             </div>
-                            <p class="help is-danger">Login incorrecte</p>
+    
                         </div>
-                        <div class="field">
+                        <div class="field" id="field-connexion-pass">
                             <label class="label">Mot de passe</label>
                             <div class="control has-icons-left">
-                                <input class="input is-danger " type="password">
+                                <input id='user-pass' class="input " type="password">
                                 <span class="icon is-small is-left">
                                     <i class="fas fa-lock"></i>
                                 </span>
                             </div>
-                            <p class="help is-danger">Mot de passe incorrecte</p>
                         </div>
                     </section>
                     <footer class="modal-card-foot">
-                        <button class="button is-success">Connexion</button>
+                        <button id='connect-user' class="button is-success">Connexion</button>
                     </footer>
                 </div>
             </div>
@@ -80,20 +79,20 @@
                                 <input id='nom' class="input" type="text" placeholder="Ex : Michou">
                             </div>
                         </div>
-                        <div class="field">
+                        <div class="field" id="field-inscription-login">
                             <label class="label">Login</label>
                             <div class="control has-icons-left">
-                                <input id='login' class="input is-danger" type="text" placeholder="Ex : Michou_de_Marseille">
+                                <input id='login' class="input" type="text" placeholder="Ex : Michou_de_Marseille">
                                 <span class="icon is-small is-left">
                                     <i class="fas fa-user"></i>
                                 </span>
                             </div>
-                            <p class="help is-danger">Login déja utilisée</p>
+                            
                         </div>
-                        <div class="field">
+                        <div class="field" id="field-inscription-email">
                             <label class="label">Email</label>
                             <div class="control has-icons-left has-icons-right">
-                                <input id='email' class="input is-danger" type="email" placeholder="Ex : michou@laplateforme.io">
+                                <input id='email' class="input" type="email" placeholder="Ex : michou@laplateforme.io">
                                 <span class="icon is-small is-left">
                                     <i class="fas fa-user"></i>
                                 </span>
@@ -101,7 +100,6 @@
                                     <i class="fas fa-check"></i>
                                 </span>
                             </div>
-                            <p class="help is-danger">Email déja utilisée</p>
                         </div>
                         <div class="field">
                             <label class="label">Mot de passe</label>
@@ -111,6 +109,8 @@
                                     <i class="fas fa-lock"></i>
                                 </span>
                             </div>
+                        </div>
+                        <div id="data">
                         </div>
                     </section>
                     <footer class="modal-card-foot">

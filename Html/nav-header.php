@@ -2,7 +2,7 @@
                     <div class="navbar-end">
                         <div class="navbar-item has-dropdown is-hoverable">
                             <a class="navbar-link">
-                                Robin
+                                <?= $_SESSION['login'] ?>
                             </a>
                             <div class="navbar-dropdown" id="menu-drop">
                                 <div class="navbar-item buttons">

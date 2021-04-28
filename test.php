@@ -1,3 +1,4 @@
+<?php session_start();?>
 <!DOCTYPE html>
 <html style="border: solid black">
 
@@ -12,42 +13,7 @@
 </head>
     
     <body style="border: solid blue">
-        <header class='navbar' style="border: solid yellow">
-            <nav class="container" role="navigation" aria-label="main navigation">
-                <div class="navbar-brand">
-                    <a class="navbar-item">
-                        <i class="fas fa-home">Home</i>   
-                    </a>
-                    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-                        <span aria-hidden="true"></span>
-                        <span aria-hidden="true"></span>
-                        <span aria-hidden="true"></span>
-                    </a>
-                </div>
-                <div id="navbarBasicExample" class="navbar-menu">
-                    <div class="navbar-end">
-                        <div class="navbar-item has-dropdown is-hoverable">
-                            <a class="navbar-link">
-                                Robin
-                            </a>
-                            <div class="navbar-dropdown" id="menu-drop">
-                                <div class="navbar-item buttons">
-                                    <a class="button is-primary">
-                                      <strong>Profil</strong>
-                                    </a>
-                                </div>
-                                <hr class="navbar-divider">
-                                <div class="navbar-item buttons">
-                                    <a class="button is-primary">
-                                        <strong>Deconnexion</strong>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </nav>
-        </header>
+        <?php include('Html/header.php');?>
 
         <section  class="section has-background-info is-flex is-justify-content-space-around is-align-items-center has-background-light" style="border: solid red">
             <aside class="menu box mt-0" style='width:30%;    '>
@@ -61,7 +27,7 @@
             <div class="card is-align-self-auto" style=' width: 50%'>
                 <div class="card-content">
                     <p class="title">
-                        “Robin votre espace de travaille est vide ! Créer en un .”</br>
+                        “<?=$_SESSION['login']?> votre espace de travaille est vide ! Créer en un .”</br>
                         "Choisiser un Espace !"</br>
                         "Choisiser un Projet !"
                     </p>

@@ -1,5 +1,5 @@
 
-                                   /** events modal **/
+                                   /** modal **/
                                   
 
 // connexion / inscription
@@ -38,7 +38,7 @@ $(document).ready(function()
     });
 });
 
-                                    /*********Traitement connexion/inscription *********/
+                                    /*********Traitement inscription *********/
 
 $(document).ready(function() 
 {
@@ -55,31 +55,68 @@ $(document).ready(function()
             url: 'Api/inscription.php',
             type: 'POST',
             data: {
-                name: nom,
-                log: login,
-                ema: email,
-                pass: password,
+                nom: nom,
+                login: login,
+                email: email,
+                password: password,
                 
             },
             success: function(response) {
-                // if (response) {
-                //     document.location.href = 'Api/inscription.php';
-                // }
-                // else {
-                //     alert('Mot de passe incorrect');
-                // }
-            },
-            error: function(hxr, error, type) {
-                $('body').append(type);
+                if (response == "email'") {
+                    $("#email").addClass("is-danger");
+                    $("#field-inscription-email").append("<p class='help is-danger'>Email déja utilisée</p>");
+                
+                }else if(response == "login'"){
+                    $("#login").addClass("is-danger");
+                    $("#field-inscription-login").append("<p class='help is-danger'>Login déja utilisée</p>");
+
+                }
+                 else if(response == true) {
+                    document.location.href = 'test.php';
+                }
             },
             
         })
-        console.log(data);
+
     })
 })
 
 
+                                    /*********Traitement connexion *********/
 
+$(document).ready(function() 
+{
+    $("#connect-user").click(function() 
+    {
+        let login = $("#user-login").val();
+        let password = $("#user-pass").val();
+        
+        $.ajax({
+            url: 'Api/connexion.php',
+            type: 'POST',
+            data: {
+                login: login,
+                password: password,
+                
+            },
+            success: function(response) {
+                if (response == 1) {
+                    
+                    $("#user-login").addClass("is-danger");
+                    $("#field-connexion-login").append("<p class='help is-danger'>Login Introuvable</p>");
+                }else if(response == 3){
+                    $("#user-pass").addClass("is-danger");
+                    $("#field-connexion-pass").append("<p class='help is-danger'>Mot de passe incorrect</p>");
+
+                }else if(response == 2) {
+                    document.location.href = 'test.php';
+                }
+            },
+            
+        })
+
+    })
+})
 
                                     /***************************/
 
