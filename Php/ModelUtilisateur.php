@@ -22,4 +22,12 @@
             return $result;
 
         }
+
+        public function updateDb($colonnes, $user, $array)
+        {
+            $sql = "UPDATE utilisateurs SET $colonnes WHERE id = :id";
+            $result = $this->stickIn($sql,$array);
+            return $result;
+
+        }
     }

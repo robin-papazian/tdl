@@ -18,10 +18,18 @@
     else
     {
         $passcript = $result[0]['password'];
-        $user = $result[0]['login'];
+        $id = $result[0]['id'];
+        $login = $result[0]['login'];
+        $nom = $result[0]['nom'];
+        $email = $result[0]['email'];
         if(password_verify($pass,$passcript))
         {
-            $_SESSION['login'] = $user;
+
+            $_SESSION['id'] = $id;
+            $_SESSION['login'] = $login;
+            $_SESSION['nom'] = $nom;
+            $_SESSION['email'] = $email;
+
             $response = 2;   
         }
         else

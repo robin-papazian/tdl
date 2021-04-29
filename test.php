@@ -14,6 +14,60 @@
     
     <body style="border: solid blue">
         <?php include('Html/header.php');?>
+        
+        <section>
+            <div class="modal" id="profil-user">
+                <div class="modal-background"></div>
+                <div class="modal-card">
+                    <header class="modal-card-head">
+                        <p class="modal-card-title">Changer votre Profil</p>
+                        <button class="delete" aria-label="close"></button>
+                    </header>
+                    <section class="modal-card-body">
+                        <div class="field">
+                            <label class="label">Nom</label>
+                            <div class="control">
+                                <input id='profil-nom' class="input" type="text" value='<?=$_SESSION['nom']?>'>
+                            </div>
+                        </div>
+                        <div class="field" id="field-profil-login">
+                            <label class="label">Login</label>
+                            <div class="control has-icons-left">
+                                <input id='profil-login' class="input" type="text" value='<?=$_SESSION['login']?>'>
+                                <span class="icon is-small is-left">
+                                    <i class="fas fa-user"></i>
+                                </span>
+                            </div>
+                            
+                        </div>
+                        <div class="field" id="field-profil-email">
+                            <label class="label">Email</label>
+                            <div class="control has-icons-left has-icons-right">
+                                <input id='profil-email' class="input" type="email" value='<?=$_SESSION['email']?>'>
+                                <span class="icon is-small is-left">
+                                    <i class="fas fa-user"></i>
+                                </span>
+                                <span class="icon is-small is-right">
+                                    <i class="fas fa-check"></i>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label class="label">Mot de passe</label>
+                            <div class="control has-icons-left">
+                                <input id='profil-password' class="input " type="password">
+                                <span class="icon is-small is-left">
+                                    <i class="fas fa-lock"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </section>
+                    <footer class="modal-card-foot">
+                        <button id='insert-profil-user' class="button is-success">Modif</button>
+                    </footer>
+                </div>
+            </div>
+        </section>
 
         <section  class="section has-background-info is-flex is-justify-content-space-around is-align-items-center has-background-light" style="border: solid red">
             <aside class="menu box mt-0" style='width:30%;    '>

@@ -2,7 +2,7 @@
                                    /** modal **/
                                   
 
-// connexion / inscription
+// connexion 
 $(document).ready(function() 
 {
     $("#button-connexion").click(function() 
@@ -11,6 +11,7 @@ $(document).ready(function()
     });
 });
 
+// inscription
 $(document).ready(function() 
 {
     $("#button-inscription").click(function() 
@@ -24,7 +25,7 @@ $(document).ready(function()
 {
     $("#profil").click(function() 
     {
-        $("#inscription").toggleClass("is-active");
+        $("#profil-user").toggleClass("is-active");
     });
 });
 
@@ -118,7 +119,43 @@ $(document).ready(function()
     })
 })
 
-                                    /***************************/
+                                    /********** Traitement profil ***********/
+
+$(document).ready(function() 
+{
+    $("#insert-profil-user").click(function() 
+    {
+        
+        let updateUser = {
+            'nom' : $("#profil-nom").val(),
+            'login' : $("#profil-login").val(),
+            'email' : $("#profil-email").val(),
+            'password' : $("#profil-password").val(),
+        }
+        
+        $.ajax({
+            url: 'Api/profil.php',
+            type: 'POST',
+            data: {
+               updateUser,
+                
+            },
+            success: function(response) {
+                if (response == "email'") {
+                    $("#profil-email").addClass("is-danger");
+                    $("#field-profil-email").append("<p class='help is-danger'>Email déja utilisée</p>");
+                
+                }else if(response == "login'"){
+                    $("#profil-login").addClass("is-danger");
+                    $("#field-profil-login").append("<p class='help is-danger'>Login déja utilisée</p>");
+
+                }
+            },
+            
+        })
+
+    })
+})
 
 
 
