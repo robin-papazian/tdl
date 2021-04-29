@@ -162,10 +162,28 @@ $(document).ready(function()
 
 $(document).ready(function() 
 {
-    $("#insert-profil-user").click(function() 
+    $("#add-espace").click(function() 
     {
-        let espace = $('#nom-espace');
-    });
+        
+        let espace = $('#nom-espace').val();
+        console.log(espace);
+
+        $.ajax({
+            url: 'Api/espace.php',
+            type: 'POST',
+            data: {espace: espace},
+        
+        success: function(response) {
+            if (response == 1){
+                $('#nom-espace').empty();
+
+            }
+           
+        },
+        })
+        
+        
+    })
 })
 
 //input espace de travaille
