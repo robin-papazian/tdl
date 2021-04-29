@@ -73,8 +73,20 @@
             <aside class="menu box mt-0" style='width:30%;    '>
                 <p class="menu-label">
                     Espace de Travaille
-                    <button class="button is-small" style="height:20px;"><i class="fas fa-plus"></i></button>
+                    <button id='show-input' class="button is-small" style="height:20px;"><i class="fas fa-plus"></i></button>
                 </p>
+                <div id='input-projet' class="field has-addons">
+                    <label class="label "></label>
+                    <div class="control ">
+                        <input id='nom-espace' class="input " type="text" placeholder="Nom du projet">
+                    </div>
+                    <div class="control">
+                        <a id='add-espace' class="button is-info">
+                            Créer
+                        </a>
+                    </div>
+                </div>
+
             </aside>
             
 
@@ -82,8 +94,8 @@
                 <div class="card-content">
                     <p class="title">
                         “<?=$_SESSION['login']?> votre espace de travaille est vide ! Créer en un .”</br>
-                        "Choisiser un Espace !"</br>
-                        "Choisiser un Projet !"
+                        <!-- "Choisiser un Espace !"</br>
+                        "Choisiser un Projet !" -->
                     </p>
                 </div>
             </div>

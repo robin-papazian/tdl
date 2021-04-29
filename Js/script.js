@@ -157,6 +157,28 @@ $(document).ready(function()
     })
 })
 
+                                    /********** Traitement Espace de Travaille ***********/
+
+
+$(document).ready(function() 
+{
+    $("#insert-profil-user").click(function() 
+    {
+        let espace = $('#nom-espace');
+    });
+})
+
+//input espace de travaille
+$(document).ready(function() 
+{
+    $("#input-projet").hide();
+    
+    $("#show-input").click(function() 
+    {  
+        $("#input-projet").toggle();
+    
+    });
+});
 
 
 // burger header
