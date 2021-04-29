@@ -175,7 +175,7 @@ $(document).ready(function()
         
         success: function(response) {
             if (response == 1){
-                $('#nom-espace').empty();
+                $('#nom-espace').val('');
 
             }
            
@@ -186,7 +186,7 @@ $(document).ready(function()
     })
 })
 
-//input espace de travaille
+//show / hide espace de travaille
 $(document).ready(function() 
 {
     $("#input-projet").hide();

@@ -78,7 +78,7 @@
                 <div id='input-projet' class="field has-addons">
                     <label class="label "></label>
                     <div class="control ">
-                        <input id='nom-espace' class="input " type="text" placeholder="Nom du projet">
+                        <input id='nom-espace' class="input" value="" type="text" placeholder="Nom du projet">
                     </div>
                     <div class="control">
                         <a id='add-espace' class="button is-info">
