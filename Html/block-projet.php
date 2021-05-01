@@ -1,8 +1,11 @@
-                <div class=" block" style=' display:flex; flex-direction:column; height:100%; '>
-                    <div class="dropdown " style='margin: 1%; ' id="drop1">
+
+                <?php foreach($_POST['array'] as $value): ?>
+                
+                <div class=" block is-flex is-flex-direction-column" style='height:100%; ' id='<?= $value['id']?>'>
+                    <div class="dropdown " style='margin: 1%; '  >
                        <div class="dropdown-trigger">
                            <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
-                               <span>Kouzzina</span>
+                               <span><?= $value["nom"] ?></span>
                                 <span class="icon is-small"><i class="fas fa-angle-down" aria-hidden="true"></i></span>
                             </button>
                         </div>
@@ -17,9 +20,15 @@
                                 <a href="#" class="dropdown-item">
                                     Supprimer
                                 </a>
+                                <hr class="dropdown-divider">
+                                <div class='dropdown-item'>
+                                    <span>Creation</span></br>
+                                    <strong><?= $value['date_creation']?></strong>
+                                </div>
                             </div>
                         </div> 
                     </div>
                 </div>
-
+                <?php endforeach;?>
+               
                 <!-- 2: Projet ajouter dans le aside via input -->

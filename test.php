@@ -70,7 +70,7 @@
         </section>
 
         <section  class="section has-background-info is-flex is-justify-content-space-around is-align-items-center has-background-light" style="border: solid red">
-            <aside class="menu box mt-0" style='width:30%;    '>
+            <aside class="menu box mt-0" style='width:30%;'>
                 <p class="menu-label">
                     Espace de Travaille
                     <button id='show-input' class="button is-small" style="height:20px;"><i class="fas fa-plus"></i></button>
@@ -86,14 +86,15 @@
                         </a>
                     </div>
                 </div>
-
+                <article id='espace-container'>
+                </article>
             </aside>
             
 
             <div class="card is-align-self-auto" style=' width: 50%'>
                 <div class="card-content">
-                    <p class="title">
-                        “<?=$_SESSION['login']?> votre espace de travaille est vide ! Créer en un .”</br>
+                    <p class="title" >
+                        “<?=$_SESSION['login']?> <span id='user-interaction'></span>
                         <!-- "Choisiser un Espace !"</br>
                         "Choisiser un Projet !" -->
                     </p>

@@ -160,33 +160,30 @@ $(document).ready(function()
                                     /********** Traitement Espace de Travaille ***********/
 
 
-$(document).ready(function() 
-{
-    $("#add-espace").click(function() 
-    {
-        
-        let espace = $('#nom-espace').val();
-        console.log(espace);
 
-        $.ajax({
-            url: 'Api/espace.php',
-            type: 'POST',
-            data: {espace: espace},
-        
-        success: function(response) {
-            if (response == 1){
-                $('#nom-espace').val('');
+//utilisateur arrive sur espace
 
-            }
-           
-        },
-        })
-        
-        
+$(document).ready(function()
+{     
+    $.ajax({
+        url: 'Api/get-espace.php',
+        dataType: 'json',
+
+    success: function(response) {
+        if(response == 1)
+        {
+            $('#user-interaction').html('votre espace de travaille est vide. Créer en un !');
+        }
+        else
+        {
+            $('#user-interaction').html('choisiser votre espace !');
+            buildEspaces(response);
+        }
+    }       
     })
 })
 
-//show / hide espace de travaille
+//show / hide input espace de travaille
 $(document).ready(function() 
 {
     $("#input-projet").hide();
@@ -197,6 +194,48 @@ $(document).ready(function()
     
     });
 });
+
+// Ajout un Espace
+$(document).ready(function() 
+{
+    $("#add-espace").click(function() 
+    {
+        
+        let espace = $('#nom-espace').val();
+        console.log(espace);
+
+        $.ajax({
+            url: 'Api/create-espace.php',
+            type: 'POST',
+            data: {espace: espace},
+            dataType: 'json',
+        
+        success: function(response) {
+
+            $('#nom-espace').val('');
+            $('#user-interaction').empty();
+            buildEspaces(response);
+            $('#user-interaction').html('choisiser votre espace !');
+           
+        },
+        })    
+    })
+})
+
+//Construction d'un espace
+function buildEspaces(array)
+{  
+    $.ajax({
+        url: 'Html/block-projet.php',
+        type: 'POST',
+        data: {array : array },
+        
+    success: function(response) {
+        $('#espace-container').empty();
+        $(response).appendTo($('#espace-container'));    
+    }
+    })
+}
 
 
 // burger header
@@ -212,10 +251,10 @@ $(document).ready(function()
 });
 
 // dropdown nav espace de travaill
-$(document).ready(function() 
-{
-    $("#drop1").click(function() 
+
+    $(".block").click(function() 
     {
-        $("#drop1").toggleClass("is-active");
+        let drop = '#' + $(".block").attr('id');
+        console.log(drop);
+        //$(drop).toggleClass("is-active");
     });
-});

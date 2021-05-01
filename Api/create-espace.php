@@ -11,4 +11,11 @@
     $array = compact('nom','id_createur');
     
     $model->insertEspace($array);
-    echo 1;
+
+
+    $result = $model->getEspace($id_createur);
+    
+
+    echo json_encode($result);
+
+    
