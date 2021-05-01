@@ -158,7 +158,18 @@ $(document).ready(function()
 })
 
                                     /********** Traitement Espace de Travaille ***********/
+$(document).on('click','.espace_button',function(){
+    console.log('s');
 
+})
+// { 
+//     $("#untest").click(function() 
+//     {
+//         //let drop = '#' + $(".block").attr('id');
+//         console.log('s');
+//         //$(drop).toggleClass("is-active");
+//     });
+// })
 
 
 //utilisateur arrive sur espace
@@ -252,9 +263,3 @@ $(document).ready(function()
 
 // dropdown nav espace de travaill
 
-    $(".block").click(function() 
-    {
-        let drop = '#' + $(".block").attr('id');
-        console.log(drop);
-        //$(drop).toggleClass("is-active");
-    });

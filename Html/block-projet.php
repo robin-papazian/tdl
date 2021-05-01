@@ -1,11 +1,11 @@
 
                 <?php foreach($_POST['array'] as $value): ?>
                 
-                <div class=" block is-flex is-flex-direction-column" style='height:100%; ' id='<?= $value['id']?>'>
-                    <div class="dropdown " style='margin: 1%; '  >
-                       <div class="dropdown-trigger">
-                           <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
-                               <span><?= $value["nom"] ?></span>
+                <div class=" block is-flex is-flex-direction-column" style='height:100%; ' >
+                    <div class="dropdown is-active" style='margin: 1%; ' >
+                       <div class="dropdown-trigger" id='<?= $value['id']?>'>
+                           <button class="button espace_button" aria-haspopup="true" aria-controls="dropdown-menu">
+                               <span class='nom_espace'><?= $value["nom"] ?></span>
                                 <span class="icon is-small"><i class="fas fa-angle-down" aria-hidden="true"></i></span>
                             </button>
                         </div>
