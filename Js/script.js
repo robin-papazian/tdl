@@ -158,21 +158,9 @@ $(document).ready(function()
 })
 
                                     /********** Traitement Espace de Travaille ***********/
-$(document).on('click','.espace_button',function(){
-    console.log('s');
-
-})
-// { 
-//     $("#untest").click(function() 
-//     {
-//         //let drop = '#' + $(".block").attr('id');
-//         console.log('s');
-//         //$(drop).toggleClass("is-active");
-//     });
-// })
 
 
-//utilisateur arrive sur espace
+//build DOM espace dynamique
 
 $(document).ready(function()
 {     
@@ -193,18 +181,6 @@ $(document).ready(function()
     }       
     })
 })
-
-//show / hide input espace de travaille
-$(document).ready(function() 
-{
-    $("#input-projet").hide();
-    
-    $("#show-input").click(function() 
-    {  
-        $("#input-projet").toggle();
-    
-    });
-});
 
 // Ajout un Espace
 $(document).ready(function() 
@@ -233,6 +209,47 @@ $(document).ready(function()
     })
 })
 
+//dropdown espace 
+
+function togleMyId(ids)
+{   
+    let id = '#' + ids
+    $(id).click(function() 
+    {
+        $(id).toggleClass('is-active');
+        
+    });   
+}
+
+$(document).on('click','.dropdown-trigger',function(){
+    
+    $.ajax({
+        url: 'Api/ids-espace.php',
+        dataType: 'json',
+    
+    success: function(response) { 
+     
+        response.forEach(index => {
+        togleMyId(index['id']);
+        }) 
+       }
+    });
+})
+
+// show / hide input espace de travaille
+$(document).ready(function() 
+{
+    $("#input-projet").hide();
+    
+    $("#show-input").click(function() 
+    {  
+        $("#input-projet").toggle();
+    
+    });
+});
+
+
+
 //Construction d'un espace
 function buildEspaces(array)
 {  
@@ -260,6 +277,4 @@ $(document).ready(function()
     
     });
 });
-
-// dropdown nav espace de travaill
 

@@ -1,15 +1,14 @@
 
                 <?php foreach($_POST['array'] as $value): ?>
-                
                 <div class=" block is-flex is-flex-direction-column" style='height:100%; ' >
-                    <div class="dropdown is-active" style='margin: 1%; ' >
-                       <div class="dropdown-trigger" id='<?= $value['id']?>'>
-                           <button class="button espace_button" aria-haspopup="true" aria-controls="dropdown-menu">
+                    <div class="dropdown " style='margin: 1%; ' id='<?= $value['id']?>' >
+                       <div class="dropdown-trigger" >
+                           <button class="button espace_button" aria-haspopup="true" aria-controls="dropdown-menu-<?=$value['nom']?>">
                                <span class='nom_espace'><?= $value["nom"] ?></span>
                                 <span class="icon is-small"><i class="fas fa-angle-down" aria-hidden="true"></i></span>
                             </button>
                         </div>
-                        <div class="dropdown-menu" id="dropdown-menu" role="menu">
+                        <div class="dropdown-menu" id="dropdown-menu-<?=$value['nom']?>" role="menu">
                             <div class="dropdown-content">
                                 <a href="#" class="dropdown-item">
                                     Voir
@@ -30,5 +29,6 @@
                     </div>
                 </div>
                 <?php endforeach;?>
+            
                
-                <!-- 2: Projet ajouter dans le aside via input -->
+                <!-- 2: Espace ajouter dans le aside via input -->
