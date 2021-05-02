@@ -16,7 +16,7 @@
                                 <a class="dropdown-item">
                                     Ajouter un Membre
                                 </a>
-                                <a href="#" class="dropdown-item">
+                                <a href="#" class="dropdown-item" id="suprime-<?= $value['id']?>">
                                     Supprimer
                                 </a>
                                 <hr class="dropdown-divider">

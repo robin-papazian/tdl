@@ -265,6 +265,26 @@ function buildEspaces(array)
     })
 }
 
+//Suprimer un espace
+$(document).on('click','.dropdown-item',function()
+{
+    //let a = $(' a > .dropdown-item').val();
+    let id_espace = this.id;
+
+    $.ajax({
+        url: 'Api/delete-espace.php',
+        type: 'POST',
+        data: {id_espace : id_espace },
+        dataType: 'json',
+        
+    success: function(response) {
+        buildEspaces(response);
+    }
+    })
+ 
+});
+
+
 
 // burger header
 $(document).ready(function() 
