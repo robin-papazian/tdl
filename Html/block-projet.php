@@ -10,7 +10,7 @@
                         </div>
                         <div class="dropdown-menu" id="dropdown-menu-<?=$value['nom']?>" role="menu">
                             <div class="dropdown-content">
-                                <a href="#" class="dropdown-item">
+                                <a href="#" class="dropdown-item voir-espace" id="espace-<?= $value['id']?>">
                                     Voir
                                 </a>
                                 <a class="dropdown-item add-membre" id="groupe-<?= $value['id']?>">

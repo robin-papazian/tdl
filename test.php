@@ -69,7 +69,7 @@
             </div>
         </section>
 
-        <section  class="section has-background-info is-flex is-justify-content-space-around is-align-items-center has-background-light" style="border: solid red">
+        <section  class="section is-large has-background-info is-flex is-justify-content-space-around is-align-items-center has-background-light" style="border: solid red" id='espace-travaille'>
             <aside class="menu box mt-0" style='width:30%;'>
                 <p class="menu-label">
                     Espace de Travaille
@@ -101,7 +101,7 @@
                 </div>
             </div>
         </section>
-        <section class='hero is-medium has-background-white-ter' style="border: solid green">
+        <section class='hero is-medium has-background-white-ter is-hidden' style="border: solid green" id='plan-travaille'>
             <div class="hero-head" style="border: solid red  ">
                 <aside style="border: solid black">
         
@@ -235,7 +235,26 @@
                     </footer>
                 </div>
             </div>
-        
+            <div class="modal is-active" id='new-liste'>
+                <div class="modal-background"></div>
+                <div class="modal-card">
+                    <header class="modal-card-head">
+                        <p class="modal-card-title">Nouvelle Liste</p>
+                        <button class="delete" aria-label="close"></button>
+                    </header>
+                    <section class="modal-card-body">
+                        <div class="field">
+                            <label class="label">Non de la liste</label>
+                            <div class="control has-icons-left">
+                                <input class="input " type="text" placeholder="Non de la liste">
+                            </div>
+                        </div>
+                    </section>
+                    <footer class="modal-card-foot">
+                        <button class="button is-success">Commancer</button>
+                    </footer>
+                </div>
+            </div>
         </section>
     </body>
 

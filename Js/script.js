@@ -304,35 +304,36 @@ $(document).on('click','.add-membre',function()
 //Ajouter un membre
 $(document).on('click','#create-group',function()
 {
-    
     let collaborateur = $('#collaborateur').val(); 
-    
-
     $.ajax({
         url: 'Api/add-group.php',
         type: 'POST',
         data: { collaborateur : collaborateur, 
                 id_espace : id_espace
-            },
-        
-            
+            },      
     success: function(response) {
        if(response == 1)
        {
             $(".modal").removeClass("is-active");
-
        }
        else
        {
             $("#collaborateur").addClass("is-danger");
             $("#field-collaborateur").append("<p class='help is-danger'>Collaborateur introuvable</p>");
-
        }
     }
-    
     })
+});
+
+                                    /********** Traitement Plan de Travaille ***********/
+
+// voir plan de travaille
+$(document).on('click','.voir-espace',function()
+{
+    id_espace = this.id;
+    $("#espace-travaille").removeClass("is-large");
+    $("#plan-travaille").removeClass("is-hidden");
     
-  
 });
 
 

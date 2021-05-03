@@ -1,4 +1,4 @@
-            <div class="modal is-active">
+            <div class="modal" id='new-liste'>
                 <div class="modal-background"></div>
                 <div class="modal-card">
                     <header class="modal-card-head">
@@ -10,9 +10,6 @@
                             <label class="label">Non de la liste</label>
                             <div class="control has-icons-left">
                                 <input class="input " type="text" placeholder="Non de la liste">
-                                <!-- <span class="icon is-small is-left">
-                                    <i class="fas fa-user"></i>
-                                </span> -->
                             </div>
                         </div>
                     </section>
