@@ -345,8 +345,27 @@ $(document).ready(function()
     });
 });
 
-
-
+//créer une liste
+$(document).ready(function() 
+{
+    $("#create-liste").click(function() 
+    { 
+        let = nom_liste = $('#nom-liste').val();
+        console.log(id_espace);
+        $.ajax({
+            url: 'Api/add-liste.php',
+            type: 'POST',
+            data: { 
+                    id_espace : id_espace,
+                    nom_liste : nom_liste, 
+                },      
+        success: function(response) {
+            $("#nom-liste").val('');
+            $("#modal-liste").removeClass("is-active");
+        }
+        })
+    })    
+})
 
 // burger header
 $(document).ready(function() 

@@ -235,7 +235,7 @@
                     </footer>
                 </div>
             </div>
-            <div class="modal is-active" id="modal-liste">
+            <div class="modal " id="modal-liste">
                 <div class="modal-background"></div>
                 <div class="modal-card">
                     <header class="modal-card-head">
