@@ -29,6 +29,15 @@ $(document).ready(function()
     });
 });
 
+// ajout membre
+$(document).on('click','.add-membre',function()
+{
+    
+    $("#membre").toggleClass("is-active");
+    
+});
+
+
 
 //close Modals
 $(document).ready(function() 
@@ -268,7 +277,7 @@ function buildEspaces(array)
 //Suprimer un espace
 $(document).on('click','.dropdown-item',function()
 {
-    //let a = $(' a > .dropdown-item').val();
+    
     let id_espace = this.id;
 
     $.ajax({
@@ -284,6 +293,47 @@ $(document).on('click','.dropdown-item',function()
  
 });
 
+var  id_espace = '';
+
+$(document).on('click','.add-membre',function()
+{
+    id_espace = this.id;
+})
+    
+
+//Ajouter un membre
+$(document).on('click','#create-group',function()
+{
+    
+    let collaborateur = $('#collaborateur').val(); 
+    
+
+    $.ajax({
+        url: 'Api/add-group.php',
+        type: 'POST',
+        data: { collaborateur : collaborateur, 
+                id_espace : id_espace
+            },
+        
+            
+    success: function(response) {
+       if(response == 1)
+       {
+            $(".modal").removeClass("is-active");
+
+       }
+       else
+       {
+            $("#collaborateur").addClass("is-danger");
+            $("#field-collaborateur").append("<p class='help is-danger'>Collaborateur introuvable</p>");
+
+       }
+    }
+    
+    })
+    
+  
+});
 
 
 // burger header

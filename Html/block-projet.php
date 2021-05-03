@@ -13,7 +13,7 @@
                                 <a href="#" class="dropdown-item">
                                     Voir
                                 </a>
-                                <a class="dropdown-item">
+                                <a class="dropdown-item add-membre" id="groupe-<?= $value['id']?>">
                                     Ajouter un Membre
                                 </a>
                                 <a href="#" class="dropdown-item" id="suprime-<?= $value['id']?>">
