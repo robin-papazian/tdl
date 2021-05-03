@@ -105,7 +105,7 @@
             <div class="hero-head" style="border: solid red  ">
                 <aside style="border: solid black">
         
-                    <button class="button is-small ml-4 " ><i class="fas fa-plus"></i></button>
+                    <button class="button is-small ml-4 " id='new-liste' ><i class="fas fa-plus"></i></button>
                    
                 </aside>
             </div>
@@ -235,7 +235,7 @@
                     </footer>
                 </div>
             </div>
-            <div class="modal is-active" id='new-liste'>
+            <div class="modal is-active" id="modal-liste">
                 <div class="modal-background"></div>
                 <div class="modal-card">
                     <header class="modal-card-head">
@@ -246,12 +246,12 @@
                         <div class="field">
                             <label class="label">Non de la liste</label>
                             <div class="control has-icons-left">
-                                <input class="input " type="text" placeholder="Non de la liste">
+                                <input class="input " type="text" placeholder="Non de la liste" id='nom-liste'>
                             </div>
                         </div>
                     </section>
                     <footer class="modal-card-foot">
-                        <button class="button is-success">Commancer</button>
+                        <button class="button is-success" id='create-liste'>Créer</button>
                     </footer>
                 </div>
             </div>

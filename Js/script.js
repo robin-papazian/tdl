@@ -257,8 +257,6 @@ $(document).ready(function()
     });
 });
 
-
-
 //Construction d'un espace
 function buildEspaces(array)
 {  
@@ -279,7 +277,7 @@ $(document).on('click','.dropdown-item',function()
 {
     
     let id_espace = this.id;
-
+    //mettre une condition si supprime alors ajax
     $.ajax({
         url: 'Api/delete-espace.php',
         type: 'POST',
@@ -335,6 +333,19 @@ $(document).on('click','.voir-espace',function()
     $("#plan-travaille").removeClass("is-hidden");
     
 });
+
+//modal Ajout liste
+$(document).ready(function() 
+{
+    
+    $("#new-liste").click(function() 
+    {  
+        $("#modal-liste").toggleClass("is-active");
+    
+    });
+});
+
+
 
 
 // burger header
