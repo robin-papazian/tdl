@@ -331,7 +331,16 @@ $(document).on('click','.voir-espace',function()
     id_espace = this.id;
     $("#espace-travaille").removeClass("is-large");
     $("#plan-travaille").removeClass("is-hidden");
-    
+
+    $.ajax({
+        url: 'Api/show-liste.php',
+        type: 'POST',
+        data: { id_espace : id_espace,},
+        dataType: 'json',
+        success: function(response) {
+            buildList(response);
+        }
+        })   
 });
 
 //modal Ajout liste
@@ -344,6 +353,21 @@ $(document).ready(function()
     
     });
 });
+
+//Construction d'une list
+function buildList(array)
+{  
+    $.ajax({
+        url: 'Html/block-liste.php',
+        type: 'POST',
+        data: {array : array },
+        
+    success: function(response) {
+        $('#all-listes').empty();
+        $(response).appendTo($('#all-listes'));    
+    }
+    })
+}
 
 //créer une liste
 $(document).ready(function() 
@@ -358,10 +382,12 @@ $(document).ready(function()
             data: { 
                     id_espace : id_espace,
                     nom_liste : nom_liste, 
-                },      
+                },
+            dataType: 'json',      
         success: function(response) {
             $("#nom-liste").val('');
             $("#modal-liste").removeClass("is-active");
+            buildList(response);
         }
         })
     })    

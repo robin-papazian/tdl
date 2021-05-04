@@ -1,6 +1,7 @@
+                <?php foreach($_POST['array'] as $value): ?>
                 <article class="panel is-success">
                     <p class="panel-heading">
-                        Nom de la liste
+                        <?=$value['nom']?>
                     </p>
                     <div class="field has-addons">
                         <label class="label "></label>
@@ -26,4 +27,5 @@
                         </div>
                     </div>
                 </article>
+                <?php endforeach;?>
                 <!-- 5 Ajouter dans heros body via modal newliste -->

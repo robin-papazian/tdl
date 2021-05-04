@@ -109,29 +109,7 @@
                    
                 </aside>
             </div>
-            <div class='hero-body is-flex is-justify-content-center is-justify-content-space-around is-flex-wrap-wrap' style='border:solid black'>
-                <article class="panel is-success">
-                    <p class="panel-heading">
-                        Nom du projet
-                    </p>
-                    <div class="field has-addons">
-                        <label class="label "></label>
-                        <div class="control ">
-                            <input class="input " type="text" placeholder="Nouvelle tache">
-                        </div>
-                        <div class="control">
-                            <a class="button is-info">
-                                Créer
-                            </a>
-                        </div>
-                    </div>
-                    <a class="panel-block is-active" style="text-decoration: line-through;">
-                        <span class="panel-icon">
-                            <i class="fas fa-book" aria-hidden="true"></i>
-                        </span>
-                        bulma
-                    </a>
-                </article>
+            <div id='all-listes' class='hero-body is-flex is-justify-content-center is-justify-content-space-around is-flex-wrap-wrap' style='border:solid black'>
                 <article class="panel is-success">
                     <p class="panel-heading">
                         Nom de la liste
@@ -159,50 +137,6 @@
                             <button class="button is-small is-danger"><i class="fas fa-times"></i></button>
                         </div>
                     </div>
-                </article>
-                <article class="panel is-success">
-                    <p class="panel-heading">
-                        Nom de la liste
-                    </p>
-                    <div class="field has-addons">
-                        <label class="label "></label>
-                        <div class="control ">
-                            <input class="input " type="text" placeholder="Nouvelle tache">
-                        </div>
-                        <div class="control">
-                            <a class="button is-info">
-                                Créer
-                            </a>
-                        </div>
-                    </div>
-                    <a class="panel-block is-active">
-                        <span class="panel-icon">
-                            <i class="fas fa-book" aria-hidden="true"></i>
-                        </span>
-                        bulma
-                    </a>
-                </article>
-                <article class="panel is-success">
-                    <p class="panel-heading">
-                        Nom de la liste
-                    </p>
-                    <div class="field has-addons">
-                        <label class="label "></label>
-                        <div class="control ">
-                            <input class="input " type="text" placeholder="Nouvelle tache">
-                        </div>
-                        <div class="control">
-                            <a class="button is-info">
-                                Créer
-                            </a>
-                        </div>
-                    </div>
-                    <a class="panel-block is-active">
-                        <span class="panel-icon">
-                            <i class="fas fa-book" aria-hidden="true"></i>
-                        </span>
-                        bulma
-                    </a>
                 </article>
             </div>
             <div class='hero-footer is-flex is-justify-content-center' style='border:solid orange'>
