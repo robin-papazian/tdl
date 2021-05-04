@@ -12,7 +12,7 @@
                                 </div>
                                 <hr class="navbar-divider">
                                 <div class="navbar-item buttons">
-                                    <a class="button is-primary">
+                                    <a href='?d' class="button is-primary">
                                         <strong>Deconnexion</strong>
                                     </a>
                                 </div>

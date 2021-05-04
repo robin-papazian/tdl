@@ -230,6 +230,13 @@ function togleMyId(ids)
     });   
 }
 
+$(document).on('click','.dropdown-item',function()
+{
+    $('.dropdown').removeClass('is-active');
+})
+
+
+
 $(document).on('click','.dropdown-trigger',function(){
     
     $.ajax({
@@ -275,19 +282,25 @@ function buildEspaces(array)
 //Suprimer un espace
 $(document).on('click','.dropdown-item',function()
 {
-    
     let id_espace = this.id;
+    let nodigit = id_espace.replace(/[0-9]/g, '');
     //mettre une condition si supprime alors ajax
-    $.ajax({
-        url: 'Api/delete-espace.php',
-        type: 'POST',
-        data: {id_espace : id_espace },
-        dataType: 'json',
+    if(nodigit == 'supprime-')
+    {
+        $.ajax({
+            url: 'Api/delete-espace.php',
+            type: 'POST',
+            data: {id_espace : id_espace },
+            dataType: 'json',
         
-    success: function(response) {
-        buildEspaces(response);
+        success: function(response) {
+            $('#all-listes').empty();
+            $('#user-interaction').empty();
+            $('#user-interaction').html('choisiser votre espace !');
+            buildEspaces(response);
+        }
+        })
     }
-    })
  
 });
 
@@ -331,26 +344,34 @@ $(document).on('click','.voir-espace',function()
     id_espace = this.id;
     $("#espace-travaille").removeClass("is-large");
     $("#plan-travaille").removeClass("is-hidden");
-
+    $('#all-listes').empty();
     $.ajax({
         url: 'Api/show-liste.php',
         type: 'POST',
         data: { id_espace : id_espace,},
         dataType: 'json',
         success: function(response) {
-            buildList(response);
+            if(response != 0)
+            {
+                $('#user-interaction').empty();
+                $('#user-interaction').html('allez y mollo !');
+                buildList(response);
+            }
+            else
+            {
+                $('#user-interaction').empty();
+                $('#user-interaction').html('vous pouvez commencer une liste des à présent !');
+            }  
         }
-        })   
+    })   
 });
 
 //modal Ajout liste
 $(document).ready(function() 
 {
-    
     $("#new-liste").click(function() 
     {  
         $("#modal-liste").toggleClass("is-active");
-    
     });
 });
 
@@ -363,7 +384,6 @@ function buildList(array)
         data: {array : array },
         
     success: function(response) {
-        $('#all-listes').empty();
         $(response).appendTo($('#all-listes'));    
     }
     })
@@ -387,6 +407,7 @@ $(document).ready(function()
         success: function(response) {
             $("#nom-liste").val('');
             $("#modal-liste").removeClass("is-active");
+            $('#all-listes').empty();
             buildList(response);
         }
         })

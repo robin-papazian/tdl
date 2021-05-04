@@ -16,7 +16,7 @@
                                 <a class="dropdown-item add-membre" id="groupe-<?= $value['id']?>">
                                     Ajouter un Membre
                                 </a>
-                                <a href="#" class="dropdown-item" id="suprime-<?= $value['id']?>">
+                                <a href="#" class="dropdown-item" id="supprime-<?= $value['id']?>">
                                     Supprimer
                                 </a>
                                 <hr class="dropdown-divider">

@@ -1,4 +1,12 @@
-<?php session_start();?>
+<?php 
+    session_start();
+
+    if (isset($_GET['d'])){
+        session_destroy();
+        header('Location: index.php');
+    }
+?>
+
 <!DOCTYPE html>
 <html style="border: solid black">
 
@@ -95,8 +103,6 @@
                 <div class="card-content">
                     <p class="title" >
                         “<?=$_SESSION['login']?> <span id='user-interaction'></span>
-                        <!-- "Choisiser un Espace !"</br>
-                        "Choisiser un Projet !" -->
                     </p>
                 </div>
             </div>
@@ -110,7 +116,7 @@
                 </aside>
             </div>
             <div id='all-listes' class='hero-body is-flex is-justify-content-center is-justify-content-space-around is-flex-wrap-wrap' style='border:solid black'>
-                <article class="panel is-success">
+                <!-- <article class="panel is-success">
                     <p class="panel-heading">
                         Nom de la liste
                     </p>
@@ -137,7 +143,7 @@
                             <button class="button is-small is-danger"><i class="fas fa-times"></i></button>
                         </div>
                     </div>
-                </article>
+                </article> -->
             </div>
             <div class='hero-footer is-flex is-justify-content-center' style='border:solid orange'>
                 <p class="title">
