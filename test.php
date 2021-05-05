@@ -5,6 +5,10 @@
         session_destroy();
         header('Location: index.php');
     }
+    elseif(empty($_SESSION['login']))
+    {
+        header('Location: index.php');
+    }
 ?>
 
 <!DOCTYPE html>
