@@ -1,54 +1,53 @@
 <?php
-
+    session_start();
     include("../Php/Model.php");
 
+    //$id = $_SESSION['id'];
+    //$email = $_SESSION['email'];
     $data = new Model;
-
     $admin = $data->stickOut("SELECT * FROM `espace` LEFT JOIN groupe ON espace.id = groupe.id_espace WHERE id_createur = 64 ");
 
-    echo '<pre>';
-    var_dump($admin);
-    echo '</pre>';
-    $a = '';
-    $c = [];
-    echo '</br>';
+    $espaceSolo = array('solo' =>'');
+    $espaceGroup = [];//array('groupe' =>array());
+
     $invit = $data->stickOut("SELECT * FROM `groupe` LEFT JOIN espace ON groupe.id_espace = espace.id WHERE collaborateur = 'bbbb@bbbb' ");
-    
-    echo '<pre>';
-    var_dump($invit);
-    echo '</pre>';
     
     foreach($admin as $key => $value)
     {
-        
-   
         if($value['collaborateur'] == NULL)
         {
-            echo $value['nom'].'</br>';
+            array_push($espaceSolo,$admin[$key]);
         }
-        if($value['collaborateur'] != NULL)
+        elseif($value['collaborateur'] != NULL)
         {
-            $a .= ' '.$value['collaborateur'];
-            $c[$value['nom']] = '';
-           
-
+            array_push($espaceGroup,$admin[$key]);
         }
     }
+
+    foreach($invit as $key => $value)
+    {
+        array_push($espaceGroup,$invit[$key]);
+    }
     echo '<pre>';
-    var_dump($c);
+    var_dump($espaceSolo);
     echo '</pre>';
-    
 
-    //$result = $data->stickOut("SELECT * FROM `espace` LEFT JOIN groupe ON espace.id = groupe.id_espace WHERE id_createur = 64 ");
 
-    
-    // foreach($result as $value)
-    // {
-    //     if($value['collaborateur'] != NULL)
-    //     {
-    //         echo array_diff($result);
-    //     }
-        
-    // }
+    $test = [];
+    echo '<pre>';
+    var_dump($espaceGroup);
+    echo '</pre>';
+
+    foreach($espaceGroup as $key => $value)
+    {
+       
+    }
+  
+
    
 
+
+    
+    
+    //echo json_encode(array("solo"=>$espaceSolo,'admin'=>$espaceAdmin,'collab'=> $espaceCollab));
+    //echo json_encode($espaceSolo);

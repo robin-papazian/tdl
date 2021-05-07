@@ -409,10 +409,51 @@ $(document).ready(function()
             $("#modal-liste").removeClass("is-active");
             $('#all-listes').empty();
             buildList(response);
+           
         }
         })
     })    
 })
+
+function buildEspacestest(array)
+{  
+    
+    $.ajax({
+        url: 'Html/block-test.php',
+        type: 'POST',
+        data: {array : array },
+        
+    success: function(response) {
+        
+       
+           
+    }
+   })
+   
+}
+
+$(document).ready(function() 
+{
+
+    $.ajax({
+        url: 'Api/test.php',
+        dataType: 'json',
+    
+    success: function(response) {
+    
+        buildEspacestest(response)
+    }
+    
+    })
+   
+  
+    
+}) 
+
+
+
+
+
 
 // burger header
 $(document).ready(function() 
