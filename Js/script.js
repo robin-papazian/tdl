@@ -415,44 +415,34 @@ $(document).ready(function()
     })    
 })
 
-function buildEspacestest(array)
-{  
-    
+                                    /********** Traitement Tache des listes ***********/
+
+//Insert une tache dans une liste
+$(document).on('click','.tache',function()
+{
+    let id_liste = $(this).parent().parent().attr('id');
+    let inputval= "#"+id_liste+' .input';
+    let nom_tache = $(inputval).val();
+
     $.ajax({
-        url: 'Html/block-test.php',
+        url: 'Api/add-tache.php',
         type: 'POST',
-        data: {array : array },
+        data: {
+            id    : id_liste,
+            input : nom_tache,
+        },
+        dataType : 'json', 
         
     success: function(response) {
         
-       
+        $('#all-listes').empty();
+        buildList(response);
            
     }
    })
-   
-}
 
-$(document).ready(function() 
-{
-
-    $.ajax({
-        url: 'Api/test.php',
-        dataType: 'json',
     
-    success: function(response) {
-    
-        buildEspacestest(response)
-    }
-    
-    })
-   
-  
-    
-}) 
-
-
-
-
+})
 
 
 // burger header
@@ -466,4 +456,45 @@ $(document).ready(function()
     
     });
 });
+
+                                    /********** Traitement des Groupes ***********/
+
+// function buildEspacestest(array)
+// {  
+//     console.log('ok');
+//     $.ajax({
+//         url: 'Html/block-test.php',
+//         type: 'POST',
+//         data: {array : array },
+        
+//     success: function(response) {
+        
+//        console.log('ok');
+           
+//     }
+//    })
+   
+// }
+
+// $(document).ready(function() 
+// {
+
+//     $.ajax({
+//         url: 'Api/test.php',
+//         dataType: 'json',
+    
+//     success: function(response) {
+    
+//         console.log(response);
+//     },
+//     error: function(hxr, error, type) {
+//        console.log(hxr);
+//     }
+    
+//     })
+   
+  
+    
+// }) 
+
 

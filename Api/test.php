@@ -5,49 +5,34 @@
     //$id = $_SESSION['id'];
     //$email = $_SESSION['email'];
     $data = new Model;
+    
+    //Espace solo + Administrateur
     $admin = $data->stickOut("SELECT * FROM `espace` LEFT JOIN groupe ON espace.id = groupe.id_espace WHERE id_createur = 64 ");
-
-    $espaceSolo = array('solo' =>'');
-    $espaceGroup = [];//array('groupe' =>array());
-
+    //Les nom Espace solo + Administrateur
+    $adminNom = $data->stickOut("SELECT DISTINCT nom FROM `espace` LEFT JOIN groupe ON espace.id = groupe.id_espace WHERE id_createur = 64");
+    
+    //Espace invitation recut
     $invit = $data->stickOut("SELECT * FROM `groupe` LEFT JOIN espace ON groupe.id_espace = espace.id WHERE collaborateur = 'bbbb@bbbb' ");
+    //Les Nom Espace invitation 
+    $invitNom = $data->stickOut("SELECT DISTINCT nom FROM `groupe` LEFT JOIN espace ON groupe.id_espace = espace.id WHERE collaborateur = 'bbbb@bbbb' ");
     
-    foreach($admin as $key => $value)
-    {
-        if($value['collaborateur'] == NULL)
-        {
-            array_push($espaceSolo,$admin[$key]);
-        }
-        elseif($value['collaborateur'] != NULL)
-        {
-            array_push($espaceGroup,$admin[$key]);
-        }
-    }
-
-    foreach($invit as $key => $value)
-    {
-        array_push($espaceGroup,$invit[$key]);
-    }
-    echo '<pre>';
-    var_dump($espaceSolo);
-    echo '</pre>';
-
-
-    $test = [];
-    echo '<pre>';
-    var_dump($espaceGroup);
-    echo '</pre>';
-
-    foreach($espaceGroup as $key => $value)
-    {
-       
-    }
-  
-
    
-
-
     
+    $compare = array_merge($admin,$invit);
     
-    //echo json_encode(array("solo"=>$espaceSolo,'admin'=>$espaceAdmin,'collab'=> $espaceCollab));
-    //echo json_encode($espaceSolo);
+    $groupe = array_merge($adminNom, $invitNom);
+    
+
+    foreach($groupe as $index => $value)
+    {
+        foreach($compare as $indexC => $valueCom)
+        {
+            if($value['nom'] == $valueCom['nom'])
+            {
+                $insert = array_diff($compare[$indexC], $groupe[$index]);
+                array_push($groupe[$index], $insert );
+                
+            }
+        }
+    }
+    echo json_encode($groupe);
