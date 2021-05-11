@@ -469,6 +469,27 @@ $(document).on('click','.edit-tache',function()
        }) 
 })
 
+//delete tache
+$(document).on('click','.delete-tache',function()
+{
+    let id_tache = $(this).parent().parent().attr('id');
+    
+    $.ajax({
+        url: 'Api/delete-tache.php',
+        type: 'POST',
+        data: {
+            id      : id_tache,
+        },
+        dataType: 'json',
+        success: function(response) {
+            $('#all-listes').empty();
+            buildList(response);  
+        }
+       }) 
+
+})
+
+
 
 // burger header
 $(document).ready(function() 

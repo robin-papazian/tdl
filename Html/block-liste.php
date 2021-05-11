@@ -28,7 +28,7 @@
                         </a>
                         <div >
                             <button class="button is-small is-success"><i class="fas fa-check"></i></button>
-                            <button class="button is-small is-danger"><i class="fas fa-times"></i></button>
+                            <button class="button is-small is-danger delete-tache"><i class="fas fa-times"></i></button>
                         </div>
                     </div>
                         <div class="modal" id="modal-<?=$valueTache['id']?>">
