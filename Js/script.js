@@ -448,8 +448,25 @@ $(document).on('click','.tache',function()
 $(document).on('click','.edit-tache',function()
 {
     let id_tache = $(this).parent().parent().parent().attr('id');
-    //let valueDesc = $(id_tache 'texte')
-    console.log(id_tache);
+    
+    let nomDesc = $('#'+id_tache).find('input[name="nom"]').val();
+    let valueDesc = $('#'+id_tache).find('textarea[name="description"]').val();
+
+    $.ajax({
+        url: 'Api/update-tache.php',
+        type: 'POST',
+        data: {
+            id      : id_tache,
+            newName : nomDesc,
+            newVal  : valueDesc,
+        },
+        dataType: 'json',
+        success: function(response) {
+            $('#all-listes').empty();
+            buildList(response);  
+            
+        }
+       }) 
 })
 
 

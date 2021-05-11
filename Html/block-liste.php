@@ -1,15 +1,4 @@
-                <?php
-
-                    include("../Php/Model.php");
-
-                    $data = new Model;
-
-                    //$liste = $data->stickOut()
-
-                    
-                
-                
-                ?>
+                <?php include("../Php/Model.php"); $data = new Model;?>
                 
                 <?php foreach($_POST['array'] as $value): ?>
                 <article class="panel is-success">
@@ -53,7 +42,7 @@
                                 <div class="field">
                                     <label class="label">Nom</label>
                                     <div class="control has-icons-left">
-                                        <input class="input" type="email" value="<?=$valueTache['nom']?>">
+                                        <input class="input" name='nom' value="<?=$valueTache['nom']?>">
                                         <span class="icon is-small is-left">
                                             <i class="fas fa-book"></i>
                                         </span>
@@ -62,7 +51,7 @@
                                 <div class="field">
                                     <label class="label">Description</label>
                                     <div class="control has-icons-left">
-                                        <textarea class="textarea" ><?php if(!empty($valueTache['description'])){ echo $valueTache['description']; }else{echo 'Desciption de la tache';}?></textarea>
+                                        <textarea class="textarea" name='description' ><?php if(!empty($valueTache['description'])){ echo $valueTache['description']; }else{echo 'Desciption de la tache';}?></textarea>
                                         
                                     </div>
                                 </div>
