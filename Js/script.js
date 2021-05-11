@@ -29,7 +29,7 @@ $(document).ready(function()
     });
 });
 
-// ajout membre
+// membre
 $(document).on('click','.add-membre',function()
 {
     
@@ -37,16 +37,22 @@ $(document).on('click','.add-membre',function()
     
 });
 
+// tache
+$(document).on('click','.tache_name',function()
+{
+    let id_tache = $(this).parent().attr('id');
+    let id_modal = '#'+id_tache.replace('tache-','modal-');
+    $(id_modal).toggleClass("is-active");
+    
+})
 
 
 //close Modals
-$(document).ready(function() 
+$(document).on('click','.delete',function()
 {
-    $(".delete").click(function() 
-    {
-        $(".modal").removeClass("is-active");
-    });
-});
+    $(".modal").removeClass("is-active");
+
+})
 
                                     /*********Traitement inscription *********/
 
@@ -169,8 +175,7 @@ $(document).ready(function()
                                     /********** Traitement Espace de Travaille ***********/
 
 
-//build DOM espace dynamique
-
+//build DOM espace 
 $(document).ready(function()
 {     
     $.ajax({
@@ -219,7 +224,6 @@ $(document).ready(function()
 })
 
 //dropdown espace 
-
 function togleMyId(ids)
 {   
     let id = '#' + ids
@@ -434,14 +438,18 @@ $(document).on('click','.tache',function()
         dataType : 'json', 
         
     success: function(response) {
-        
         $('#all-listes').empty();
-        buildList(response);
-           
+        buildList(response);  
     }
-   })
+   }) 
+})
 
-    
+//update tache
+$(document).on('click','.edit-tache',function()
+{
+    let id_tache = $(this).parent().parent().parent().attr('id');
+    //let valueDesc = $(id_tache 'texte')
+    console.log(id_tache);
 })
 
 
