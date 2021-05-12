@@ -485,8 +485,27 @@ $(document).on('click','.delete-tache',function()
             $('#all-listes').empty();
             buildList(response);  
         }
-       }) 
+    }) 
+})
 
+//valide tache
+$(document).on('click','.valide-tache',function()
+{
+    let id_tache = $(this).parent().parent().attr('id');
+
+    $.ajax({
+        url: 'Api/valide-tache.php',
+        type: 'POST',
+        data: {
+            id : id_tache,
+        },
+        dataType: 'json',
+       
+        success: function(response) {
+            $('#all-listes').empty();
+            buildList(response);  
+        }
+    }) 
 })
 
 

@@ -20,14 +20,14 @@
                     <?php if(!empty($tache)):?>
                     <?php foreach($tache as $valueTache):?>
                     <div class="panel-block is-active is-flex is-justify-content-space-between" id="tache-<?=$valueTache['id']?>">
-                        <a class="is-flex is-align-items-center tache_name">
+                        <a class="is-flex is-align-items-center tache_name" style='<?php if($valueTache["validation"] == 1){echo "text-decoration: line-through";}?>' >
                             <span class="panel-icon">
                                 <i class="fas fa-book" aria-hidden="true"></i>
                             </span>
                             <?=$valueTache['nom']?>
                         </a>
                         <div >
-                            <button class="button is-small is-success"><i class="fas fa-check"></i></button>
+                            <button class="button is-small is-success valide-tache"><i class="fas fa-check"></i></button>
                             <button class="button is-small is-danger delete-tache"><i class="fas fa-times"></i></button>
                         </div>
                     </div>
