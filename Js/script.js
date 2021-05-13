@@ -1,8 +1,8 @@
 
-                                   /** modal **/
+                                   /** Modal **/
                                   
 
-// connexion 
+// Connexion 
 $(document).ready(function() 
 {
     $("#button-connexion").click(function() 
@@ -11,7 +11,7 @@ $(document).ready(function()
     });
 });
 
-// inscription
+// Inscription
 $(document).ready(function() 
 {
     $("#button-inscription").click(function() 
@@ -20,7 +20,7 @@ $(document).ready(function()
     });
 });
 
-// profil
+// Profil
 $(document).ready(function() 
 {
     $("#profil").click(function() 
@@ -29,7 +29,7 @@ $(document).ready(function()
     });
 });
 
-// membre
+// Membre
 $(document).on('click','.add-membre',function()
 {
     
@@ -37,7 +37,7 @@ $(document).on('click','.add-membre',function()
     
 });
 
-// tache
+// Tache
 $(document).on('click','.tache_name',function()
 {
     let id_tache = $(this).parent().attr('id');
@@ -46,15 +46,35 @@ $(document).on('click','.tache_name',function()
     
 })
 
+//Ajout liste
+$(document).ready(function() 
+{
+    $("#new-liste").click(function() 
+    {  
+        $("#modal-liste").toggleClass("is-active");
+    });
+});
 
-//close Modals
+// Header
+$(document).ready(function() 
+{
+    $(".navbar-burger").click(function() 
+    {
+        // Ajout "is-active" class "navbar-burger" & "navbar-menu"
+        $(".navbar-burger").toggleClass("is-active");
+        $(".navbar-menu").toggleClass("is-active");
+    
+    });
+});
+
+// Close
 $(document).on('click','.delete',function()
 {
     $(".modal").removeClass("is-active");
 
 })
 
-                                    /*********Traitement inscription *********/
+                                    /********* Inscription *********/
 
 $(document).ready(function() 
 {
@@ -88,7 +108,7 @@ $(document).ready(function()
 
                 }
                  else if(response == true) {
-                    document.location.href = 'test.php';
+                    document.location.href = 'todolist.php';
                 }
             },
             
@@ -98,7 +118,7 @@ $(document).ready(function()
 })
 
 
-                                    /*********Traitement connexion *********/
+                                    /********* Connexion *********/
 
 $(document).ready(function() 
 {
@@ -125,7 +145,7 @@ $(document).ready(function()
                     $("#field-connexion-pass").append("<p class='help is-danger'>Mot de passe incorrect</p>");
 
                 }else if(response == 2) {
-                    document.location.href = 'test.php';
+                    document.location.href = 'todolist.php';
                 }
             },
             
@@ -134,7 +154,7 @@ $(document).ready(function()
     })
 })
 
-                                    /********** Traitement profil ***********/
+                                    /********** Profil ***********/
 
 $(document).ready(function() 
 {
@@ -172,7 +192,7 @@ $(document).ready(function()
     })
 })
 
-                                    /********** Traitement Espace de Travaille ***********/
+                                    /********** Espace de Travaille ***********/
 
 
 //build DOM espace 
@@ -196,7 +216,7 @@ $(document).ready(function()
     })
 })
 
-// Ajout un Espace
+// Ajout 
 $(document).ready(function() 
 {
     $("#add-espace").click(function() 
@@ -268,7 +288,7 @@ $(document).ready(function()
     });
 });
 
-//Construction d'un espace
+//Construction 
 function buildEspaces(array)
 {  
     $.ajax({
@@ -283,12 +303,12 @@ function buildEspaces(array)
     })
 }
 
-//Suprimer un espace
+//Suppression
 $(document).on('click','.dropdown-item',function()
 {
     let id_espace = this.id;
     let nodigit = id_espace.replace(/[0-9]/g, '');
-    //mettre une condition si supprime alors ajax
+    
     if(nodigit == 'supprime-')
     {
         $.ajax({
@@ -340,9 +360,9 @@ $(document).on('click','#create-group',function()
     })
 });
 
-                                    /********** Traitement Plan de Travaille ***********/
+                                    /********** Plan de Travaille Listes ***********/
 
-// voir plan de travaille
+// Listes 
 $(document).on('click','.voir-espace',function()
 {
     id_espace = this.id;
@@ -370,22 +390,14 @@ $(document).on('click','.voir-espace',function()
     })   
 });
 
-//modal Ajout liste
-$(document).ready(function() 
-{
-    $("#new-liste").click(function() 
-    {  
-        $("#modal-liste").toggleClass("is-active");
-    });
-});
-
-//Construction d'une list
+//Construction 
 function buildList(array)
 {  
     $.ajax({
         url: 'Html/block-liste.php',
         type: 'POST',
         data: {array : array },
+        dataType: 'html',
         
     success: function(response) {
         $(response).appendTo($('#all-listes'));    
@@ -393,7 +405,7 @@ function buildList(array)
     })
 }
 
-//créer une liste
+//Création
 $(document).ready(function() 
 {
     $("#create-liste").click(function() 
@@ -419,9 +431,37 @@ $(document).ready(function()
     })    
 })
 
-                                    /********** Traitement Tache des listes ***********/
+//drag & drop 
+// var suprimer = '';
 
-//Insert une tache dans une liste
+// $(document).on('mousedown','.liste',function()
+// {
+//     $('html, body').animate({
+//         scrollTop: $("#bin").offset().top
+//     }, 1500);
+//     suprimer = '#'+$(this).attr('id');
+// })
+
+// $(document).on('dragend',suprimer,function()
+// {
+//     $.ajax({
+//         url: 'Api/delete-liste.php',
+//         type: 'POST',
+//         data: {
+//             id : suprimer,
+//         },
+//         dataType: 'json',
+//         success: function(response) {
+//             $('#all-listes').empty();
+//             buildList(response);       
+//         }
+//     }) 
+// })
+
+
+                                    /********** Tache des listes ***********/
+
+//Insertion 
 $(document).on('click','.tache',function()
 {
     let id_liste = $(this).parent().parent().attr('id');
@@ -444,7 +484,7 @@ $(document).on('click','.tache',function()
    }) 
 })
 
-//update tache
+//Modification
 $(document).on('click','.edit-tache',function()
 {
     let id_tache = $(this).parent().parent().parent().attr('id');
@@ -469,7 +509,7 @@ $(document).on('click','.edit-tache',function()
        }) 
 })
 
-//delete tache
+// Supression
 $(document).on('click','.delete-tache',function()
 {
     let id_tache = $(this).parent().parent().attr('id');
@@ -488,7 +528,7 @@ $(document).on('click','.delete-tache',function()
     }) 
 })
 
-//valide tache
+// Validation
 $(document).on('click','.valide-tache',function()
 {
     let id_tache = $(this).parent().parent().attr('id');
@@ -508,58 +548,5 @@ $(document).on('click','.valide-tache',function()
     }) 
 })
 
-
-
-// burger header
-$(document).ready(function() 
-{
-    $(".navbar-burger").click(function() 
-    {
-        // Ajout "is-active" class "navbar-burger" & "navbar-menu"
-        $(".navbar-burger").toggleClass("is-active");
-        $(".navbar-menu").toggleClass("is-active");
-    
-    });
-});
-
-                                    /********** Traitement des Groupes ***********/
-
-// function buildEspacestest(array)
-// {  
-//     console.log('ok');
-//     $.ajax({
-//         url: 'Html/block-test.php',
-//         type: 'POST',
-//         data: {array : array },
-        
-//     success: function(response) {
-        
-//        console.log('ok');
-           
-//     }
-//    })
-   
-// }
-
-// $(document).ready(function() 
-// {
-
-//     $.ajax({
-//         url: 'Api/test.php',
-//         dataType: 'json',
-    
-//     success: function(response) {
-    
-//         console.log(response);
-//     },
-//     error: function(hxr, error, type) {
-//        console.log(hxr);
-//     }
-    
-//     })
-   
-  
-    
-// }) 
-
+                                    /********** Groupes ***********/
 

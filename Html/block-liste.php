@@ -1,7 +1,7 @@
                 <?php include("../Php/Model.php"); $data = new Model;?>
                 
                 <?php foreach($_POST['array'] as $value): ?>
-                <article class="panel is-success">
+                <article class="panel is-success liste" draggable='true' id="liste-<?=$value['id']?>">
                     <p class="panel-heading">
                         <?=$value['nom']?>
                     </p>
@@ -17,7 +17,7 @@
                         </div>
                     </div>
                     <?php $id= $value['id']; $tache = $data->stickOut("SELECT * FROM tache WHERE id_liste = $id ")?>
-                    <?php if(!empty($tache)):?>
+                    <?php if(!empty($tache)): echo '<pre>';var_dump($tache); echo '</pre>';?>
                     <?php foreach($tache as $valueTache):?>
                     <div class="panel-block is-active is-flex is-justify-content-space-between" id="tache-<?=$valueTache['id']?>">
                         <a class="is-flex is-align-items-center tache_name" style='<?php if($valueTache["validation"] == 1){echo "text-decoration: line-through";}?>' >
@@ -31,8 +31,8 @@
                             <button class="button is-small is-danger delete-tache"><i class="fas fa-times"></i></button>
                         </div>
                     </div>
-                        <div class="modal" id="modal-<?=$valueTache['id']?>">
-                            <div class="modal-background"></div>
+                    <div class="modal" id="modal-<?=$valueTache['id']?>">
+                        <div class="modal-background"></div>
                             <div class="modal-card">
                             <header class="modal-card-head">
                                 <p class="modal-card-title"><?=$valueTache['nom']?></p>
