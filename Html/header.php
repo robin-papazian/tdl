@@ -1,4 +1,4 @@
-        <header class='navbar'>
+        <header class='navbar has-background-white-ter'>
             <nav class="container" role="navigation" aria-label="main navigation">
                 <div class="navbar-brand">
                     <a class="navbar-item">

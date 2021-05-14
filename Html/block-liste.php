@@ -51,7 +51,7 @@
                                 <div class="field">
                                     <label class="label">Description</label>
                                     <div class="control has-icons-left">
-                                        <textarea class="textarea" name='description' ><?php if(!empty($valueTache['description'])){ echo $valueTache['description']; }else{echo 'Desciption de la tache';}?></textarea>
+                                        <textarea class="textarea" name='description' placeholder='Décriver votre tache'><?php if(!empty($valueTache['description'])){ echo $valueTache['description']; }?></textarea>
                                         
                                     </div>
                                 </div>

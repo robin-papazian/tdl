@@ -12,7 +12,7 @@
 ?>
 
 <!DOCTYPE html>
-<html style="border: solid black">
+<html >
 
 <head>
     <meta charset="utf-8">
@@ -24,7 +24,7 @@
     <script src="https://kit.fontawesome.com/9ddb75d515.js" crossorigin="anonymous"></script>
 </head>
     
-    <body style="border: solid blue">
+    <body>
         <?php include('Html/header.php');?>
         
         <section>
@@ -81,7 +81,7 @@
             </div>
         </section>
 
-        <section  class="section is-large has-background-info is-flex is-justify-content-space-around is-align-items-center has-background-light" style="border: solid red" id='espace-travaille'>
+        <section  class="section is-large has-background-info is-flex is-justify-content-space-around is-align-items-center has-background-light"  id='espace-travaille'>
             <aside class="menu box mt-0" style='width:30%;'>
                 <p class="menu-label">
                     Espace de Travaille
@@ -111,19 +111,19 @@
                 </div>
             </div>
         </section>
-        <section class='hero is-medium has-background-white-ter is-hidden' style="border: solid green" id='plan-travaille'>
-            <div class="hero-head" style="border: solid red  ">
-                <aside style="border: solid black">
+        <section class='hero is-medium has-background-white-ter is-hidden' id='plan-travaille'>
+            <div class="hero-head">
+                <aside >
         
-                    <button class="button is-small ml-4 " id='new-liste' ><i class="fas fa-plus"></i></button>
+                    <button class="button is-small ml-4 " id='new-liste' style='margin-top:2%;'><i class="fas fa-plus"></i></button>
                    
                 </aside>
             </div>
-            <div id='all-listes' class='hero-body is-flex is-justify-content-center is-justify-content-space-around is-flex-wrap-wrap' style='border:solid black'>
+            <div id='all-listes' class='hero-body is-flex is-justify-content-center is-justify-content-space-around is-flex-wrap-wrap'>
                                     <!-- Listes des Espaces ICI -->
             </div>
             <div class='hero-footer is-flex is-justify-content-center' id='bin' draggable='true'>
-                <p class="title" >
+                <p class="title" style='margin-bottom: 5%;'>
                     <i  class="far fa-trash-alt fa-5x"></i>
                 </p>
             </div>
