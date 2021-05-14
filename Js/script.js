@@ -431,32 +431,33 @@ $(document).ready(function()
     })    
 })
 
-//drag & drop 
-// var suprimer = '';
+// Drag & Drop 
+var suprimer = '';
 
-// $(document).on('mousedown','.liste',function()
-// {
-//     $('html, body').animate({
-//         scrollTop: $("#bin").offset().top
-//     }, 1500);
-//     suprimer = '#'+$(this).attr('id');
-// })
+$(document).on('mousedown','.drag-drop',function()
+{
+    $('html, body').animate({
+        scrollTop: $("#bin").offset().top
+    }, 1500);
+    suprimer = '#'+$(this).parent().attr('id');
+    console.log(suprimer);
+})
 
-// $(document).on('dragend',suprimer,function()
-// {
-//     $.ajax({
-//         url: 'Api/delete-liste.php',
-//         type: 'POST',
-//         data: {
-//             id : suprimer,
-//         },
-//         dataType: 'json',
-//         success: function(response) {
-//             $('#all-listes').empty();
-//             buildList(response);       
-//         }
-//     }) 
-// })
+$(document).on('dragend',suprimer,function()
+{
+    $.ajax({
+        url: 'Api/delete-liste.php',
+        type: 'POST',
+        data: {
+            id : suprimer,
+        },
+        dataType: 'json',
+        success: function(response) {
+            $('#all-listes').empty();
+            buildList(response);       
+        }
+    }) 
+})
 
 
                                     /********** Tache des listes ***********/

@@ -1,8 +1,8 @@
                 <?php include("../Php/Model.php"); $data = new Model;?>
                 
                 <?php foreach($_POST['array'] as $value): ?>
-                <article class="panel is-success liste" draggable='true' id="liste-<?=$value['id']?>">
-                    <p class="panel-heading">
+                <article class="panel is-success " draggable='true' id="liste-<?=$value['id']?>">
+                    <p class="panel-heading drag-drop">
                         <?=$value['nom']?>
                     </p>
                     <div class="field has-addons" id="createtache-<?=$value['id']?>">
@@ -17,7 +17,7 @@
                         </div>
                     </div>
                     <?php $id= $value['id']; $tache = $data->stickOut("SELECT * FROM tache WHERE id_liste = $id ")?>
-                    <?php if(!empty($tache)): echo '<pre>';var_dump($tache); echo '</pre>';?>
+                    <?php if(!empty($tache)):?>
                     <?php foreach($tache as $valueTache):?>
                     <div class="panel-block is-active is-flex is-justify-content-space-between" id="tache-<?=$valueTache['id']?>">
                         <a class="is-flex is-align-items-center tache_name" style='<?php if($valueTache["validation"] == 1){echo "text-decoration: line-through";}?>' >
@@ -33,7 +33,7 @@
                     </div>
                     <div class="modal" id="modal-<?=$valueTache['id']?>">
                         <div class="modal-background"></div>
-                            <div class="modal-card">
+                        <div class="modal-card">
                             <header class="modal-card-head">
                                 <p class="modal-card-title"><?=$valueTache['nom']?></p>
                                 <button class="delete" aria-label="close"></button>
@@ -60,6 +60,7 @@
                                 <button class="button is-success edit-tache" >Editer</button>
                             </footer>
                         </div>
+                    </div>
                     <?php endforeach;?>
                     <?php endif; ?>
                 </article>
