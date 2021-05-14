@@ -161,7 +161,7 @@
                     </header>
                     <section class="modal-card-body">
                         <div class="field">
-                            <label class="label">Non de la liste</label>
+                            <label class="label">Nom de la liste</label>
                             <div class="control has-icons-left">
                                 <input class="input " type="text" placeholder="Non de la liste" id='nom-liste'>
                             </div>
