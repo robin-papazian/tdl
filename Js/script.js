@@ -84,9 +84,7 @@ $(document).ready(function()
         let login = $("#login").val();
         let email = $("#email").val();
         let password = $("#password").val();
-
-       
-        
+    
         $.ajax({
             url: 'Api/inscription.php',
             type: 'POST',
@@ -226,10 +224,7 @@ $(document).ready(function()
 {
     $("#add-espace").click(function() 
     {
-        
         let espace = $('#nom-espace').val();
-        console.log(espace);
-
         $.ajax({
             url: 'Api/create-espace.php',
             type: 'POST',
@@ -289,23 +284,26 @@ $(document).ready(function()
     $("#show-input").click(function() 
     {  
         $("#input-projet").toggle();
-    
     });
 });
 
 //Construction 
 function buildEspaces(array)
-{  
+{
+   
     $.ajax({
         url: 'Html/block-projet.php',
         type: 'POST',
         data: {array : array },
-        
+            
     success: function(response) {
         $('#espace-container').empty();
         $(response).appendTo($('#espace-container'));    
     }
     })
+
+
+    
 }
 
 //Suppression
@@ -326,7 +324,11 @@ $(document).on('click','.dropdown-item',function()
             $('#all-listes').empty();
             $('#user-interaction').empty();
             $('#user-interaction').html('choisiser votre espace !');
-            buildEspaces(response);
+            $('#espace-container').empty();
+            if(response != '1'){
+                buildEspaces(response);
+            }
+            
         }
         })
     }
@@ -446,7 +448,7 @@ $(document).on('mousedown','.drag-drop',function()
         scrollTop: $("#bin").offset().top
     }, 1500);
     suprimer = '#'+$(this).parent().attr('id');
-    console.log(suprimer);
+
 })
 
 $(document).on('dragend',suprimer,function()
@@ -555,5 +557,4 @@ $(document).on('click','.valide-tache',function()
     }) 
 })
 
-                                    /********** Groupes ***********/
 

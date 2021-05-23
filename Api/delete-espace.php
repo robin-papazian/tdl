@@ -29,8 +29,7 @@
     }
 
     for ($x = 0; $x != count($array); $x++){
-        if ($x > 0 && $array[$x]['id_espace'] == $array[$x - 1]['id_espace']){
-            //echo $x . ' ';    
+        if ($x > 0 && $array[$x]['id_espace'] == $array[$x - 1]['id_espace'] && $array[$x]['id_espace'] != NULL){
             array_splice($array,1, $x);
             $x--;
         }

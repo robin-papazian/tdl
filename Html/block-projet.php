@@ -1,6 +1,6 @@
 
                 <?php foreach($_POST['array'] as $value): ?>
-                <?php if(!empty($value) && $value['collaborateur'] == NULL) : ?>
+                <?php if($value['collaborateur'] == NULL) : ?>
                 <div class=" block is-flex is-flex-direction-column" style='height:100%; ' >
                     <div class="dropdown " style='margin: 1%; ' id='<?= $value['ID']?>' >
                        <div class="dropdown-trigger" >
@@ -35,7 +35,7 @@
                     Groupe de Travaille
                 </p>
                 <?php foreach($_POST['array'] as $value): ?>
-                <?php if(!empty($value) && $value['collaborateur'] != NULL) : ?>
+                <?php if($value['collaborateur'] != NULL) : ?>
                 <div class=" block is-flex is-flex-direction-column" style='height:100%; ' >
                     <div class="dropdown " style='margin: 1%; ' id='<?= $value['ID']?>' >
                        <div class="dropdown-trigger" >

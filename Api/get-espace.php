@@ -10,6 +10,10 @@
 
     $result = $model->stickOut("SELECT espace.id AS ID, espace.nom, espace.id_createur, espace.date_creation, groupe.id AS ID_GROUPE, groupe.collaborateur, groupe.id_espace FROM `espace` LEFT JOIN groupe ON espace.id = groupe.id_espace WHERE `id_createur` = $user OR `collaborateur` = '$email' ");
     $array = $result;
+
+    // echo '<pre>';
+    // var_dump($array);
+    // echo '<pre>';
    
     foreach($result as $val)
     {
@@ -26,8 +30,7 @@
     }
 
     for ($x = 0; $x != count($array); $x++){
-        if ($x > 0 && $array[$x]['id_espace'] == $array[$x - 1]['id_espace']){
-            //echo $x . ' ';    
+        if ($x > 0 && $array[$x]['id_espace'] == $array[$x - 1]['id_espace'] && $array[$x]['id_espace'] != NULL){ 
             array_splice($array,1, $x);
             $x--;
         }
