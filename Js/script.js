@@ -196,7 +196,8 @@ $(document).ready(function()
 
 
 //build DOM espace 
-$(document).ready(function()
+
+function buildDom()
 {     
     $.ajax({
         url: 'Api/get-espace.php',
@@ -214,34 +215,38 @@ $(document).ready(function()
         }
     }       
     })
+}
+
+$(document).ready(function(){
+    buildDom();
 })
 
-// Ajout 
-// $(document).ready(function() 
-// {
-//     $("#add-espace").click(function() 
-//     {
+//Ajout 
+$(document).ready(function() 
+{
+    $("#add-espace").click(function() 
+    {
         
-//         let espace = $('#nom-espace').val();
-//         console.log(espace);
+        let espace = $('#nom-espace').val();
+        console.log(espace);
 
-//         $.ajax({
-//             url: 'Api/create-espace.php',
-//             type: 'POST',
-//             data: {espace: espace},
-//             dataType: 'json',
+        $.ajax({
+            url: 'Api/create-espace.php',
+            type: 'POST',
+            data: {espace: espace},
+            dataType: 'json',
         
-//         success: function(response) {
+        success: function(response) {
 
-//             $('#nom-espace').val('');
-//             $('#user-interaction').empty();
-//             buildEspaces(response);
-//             $('#user-interaction').html('choisiser votre espace !');
+            $('#nom-espace').val('');
+            $('#user-interaction').empty();
+            buildEspaces(response);
+            $('#user-interaction').html('choisiser votre espace !');
            
-//         },
-//         })    
-//     })
-// })
+        },
+        })    
+    })
+})
 
 //dropdown espace 
 function togleMyId(ids)
@@ -304,29 +309,29 @@ function buildEspaces(array)
 }
 
 //Suppression
-// $(document).on('click','.dropdown-item',function()
-// {
-//     let id_espace = this.id;
-//     let nodigit = id_espace.replace(/[0-9]/g, '');
+$(document).on('click','.dropdown-item',function()
+{
+    let id_espace = this.id;
+    let nodigit = id_espace.replace(/[0-9]/g, '');
     
-//     if(nodigit == 'supprime-')
-//     {
-//         $.ajax({
-//             url: 'Api/delete-espace.php',
-//             type: 'POST',
-//             data: {id_espace : id_espace },
-//             dataType: 'json',
+    if(nodigit == 'supprime-')
+    {
+        $.ajax({
+            url: 'Api/delete-espace.php',
+            type: 'POST',
+            data: {id_espace : id_espace },
+            dataType: 'json',
         
-//         success: function(response) {
-//             $('#all-listes').empty();
-//             $('#user-interaction').empty();
-//             $('#user-interaction').html('choisiser votre espace !');
-//             buildEspaces(response);
-//         }
-//         })
-//     }
+        success: function(response) {
+            $('#all-listes').empty();
+            $('#user-interaction').empty();
+            $('#user-interaction').html('choisiser votre espace !');
+            buildEspaces(response);
+        }
+        })
+    }
  
-// });
+});
 
 var  id_espace = '';
 
@@ -350,6 +355,7 @@ $(document).on('click','#create-group',function()
        if(response == 1)
        {
             $(".modal").removeClass("is-active");
+            buildDom();
        }
        else
        {
