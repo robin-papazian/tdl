@@ -98,11 +98,11 @@ $(document).ready(function()
             success: function(response) {
                 if (response == "email'") {
                     $("#email").addClass("is-danger");
-                    $("#field-inscription-email").append("<p class='help is-danger'>Email déja utilisée</p>");
+                    $("#field-inscription-email").append("<p class='help is-danger'>Email déja utilisé</p>");
                 
                 }else if(response == "login'"){
                     $("#login").addClass("is-danger");
-                    $("#field-inscription-login").append("<p class='help is-danger'>Login déja utilisée</p>");
+                    $("#field-inscription-login").append("<p class='help is-danger'>Login déja utilisé</p>");
 
                 }
                  else if(response == true) {
@@ -176,11 +176,11 @@ $(document).ready(function()
             success: function(response) {
                 if (response == "email'") {
                     $("#profil-email").addClass("is-danger");
-                    $("#field-profil-email").append("<p class='help is-danger'>Email déja utilisée</p>");
+                    $("#field-profil-email").append("<p class='help is-danger'>Email déja utilisé</p>");
                 
                 }else if(response == "login'"){
                     $("#profil-login").addClass("is-danger");
-                    $("#field-profil-login").append("<p class='help is-danger'>Login déja utilisée</p>");
+                    $("#field-profil-login").append("<p class='help is-danger'>Login déja utilisé</p>");
 
                 }
             },
@@ -204,7 +204,7 @@ function buildDom()
     success: function(response) {
         if(response == 1)
         {
-            $('#user-interaction').html('votre espace de travaille est vide. Créer en un !');
+            $('#user-interaction').html('votre espace de travail est vide. Créer en un !');
         }
         else
         {
@@ -392,7 +392,7 @@ $(document).on('click','.voir-espace',function()
             else
             {
                 $('#user-interaction').empty();
-                $('#user-interaction').html('vous pouvez commencer une liste des à présent !');
+                $('#user-interaction').html('vous pouvez commencer une liste dès à présent !');
             }  
         }
     })   
