@@ -204,11 +204,11 @@ function buildDom()
     success: function(response) {
         if(response == 1)
         {
-            $('#user-interaction').html('votre espace de travail est vide. Créer en un !');
+            $('#user-interaction').html('votre espace de travail est vide. Créez en un !');
         }
         else
         {
-            $('#user-interaction').html('choisiser votre espace !');
+            $('#user-interaction').html('choisissez votre espace !');
             buildEspaces(response);
         }
     }       

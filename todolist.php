@@ -84,7 +84,7 @@
         <section  class="section is-large has-background-info is-flex is-justify-content-space-around is-align-items-center has-background-light"  id='espace-travaille'>
             <aside class="menu box mt-0" style='width:30%;'>
                 <p class="menu-label">
-                    Espace de Travaille
+                    Espace de Travail
                     <button id='show-input' class="button is-small" style="height:20px;"><i class="fas fa-plus"></i></button>
                 </p>
                 <div id='input-projet' class="field has-addons">
@@ -106,7 +106,7 @@
             <div class="card is-align-self-auto" style=' width: 50%'>
                 <div class="card-content">
                     <p class="title" >
-                        “<?=$_SESSION['login']?> <span id='user-interaction'></span>
+                        <?=$_SESSION['login']?> <span id='user-interaction'></span>
                     </p>
                 </div>
             </div>

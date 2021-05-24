@@ -32,7 +32,7 @@
                 <?php endif;?>
                 <?php endforeach;?>
                 <p class="menu-label">
-                    Groupe de Travaille
+                    Groupe de Travail
                 </p>
                 <?php foreach($_POST['array'] as $value): ?>
                 <?php if($value['collaborateur'] != NULL) : ?>
