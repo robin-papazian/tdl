@@ -236,7 +236,7 @@ $(document).ready(function()
             $('#nom-espace').val('');
             $('#user-interaction').empty();
             buildEspaces(response);
-            $('#user-interaction').html('choisiser votre espace !');
+            $('#user-interaction').html('choisissez votre espace !');
            
         },
         })    
@@ -323,7 +323,7 @@ $(document).on('click','.dropdown-item',function()
         success: function(response) {
             $('#all-listes').empty();
             $('#user-interaction').empty();
-            $('#user-interaction').html('choisiser votre espace !');
+            $('#user-interaction').html('choisissez votre espace !');
             $('#espace-container').empty();
             if(response != '1'){
                 buildEspaces(response);
